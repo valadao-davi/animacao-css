@@ -1,0 +1,309 @@
+*{
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+}
+
+main{
+    margin:auto;
+    width: 1200px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;     
+}
+#divGamer{
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 5px black;
+    animation: pisca 5s linear infinite;
+    background-color: red;
+}
+#girarCarta{
+    width: 100px;
+    height: 150px;
+    border-style: solid;
+    border-width: 5px black;
+    animation: girar 3s linear infinite;
+    background-image: url("./imgs/Yugioh_Card_Back.jpg");
+    background-size: cover;
+}
+
+#cliqueEmMim{
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: red;
+    color: white;  
+}
+#cliqueEmMim:focus{
+    animation: desaparecer 2s linear;
+    animation-fill-mode: forwards;  
+}
+#cliquePulo{
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 5px black;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: red;
+    color: white;  
+}
+#cliquePulo:focus{
+    animation: cliquePulo 0.5s linear;
+    animation-fill-mode: forwards;  
+}
+#bomba{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}
+#bomba:focus{
+    animation: explodir linear  5s;
+    animation-fill-mode: forwards;
+}
+
+#loading{
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.bolinha{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(190, 190, 190);
+    animation: loadingAnimation 1s linear infinite;
+}
+
+.n2{
+    animation-delay: 0.2s;
+}
+.n3{
+    animation-delay: 0.4s;
+}
+#slides{
+    position: relative;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 5px black;
+}
+#slide1{ 
+    animation: mudarTexto 2s ease-out infinite alternate;
+    position: absolute;
+    z-index: 1;
+}
+#slide2{
+    background: transparent;
+    position: absolute;
+    z-index: 0;
+    animation: mudarTexto 2s ease-in infinite alternate-reverse;
+}
+
+.parallax{
+    width: 800px;
+    height: 330px;
+    border-style: solid;
+    border-width: 5px black;
+    position: relative;
+    overflow: hidden;
+    background-image: url('./imgs/smw-bg-hills.png');
+    background-size: 1000px;
+    animation: animacaoFundo 10s linear infinite;
+    animation-fill-mode: forwards;
+}
+#img_montanha{
+    width: 300px;
+    height: 150px;
+    background-image: url('./imgs/772-7720355_super-mario-bros-super-mario-bros-hill-hd-removebg-preview.png');
+    background-size: contain;
+    position: absolute;
+    bottom: 10px;
+    animation: animacaoMontanha 6s linear infinite;
+    animation-fill-mode: forwards;
+}
+
+#img_gif_mario{
+    width: 120px;
+    height: 120px;
+    background-image: url('./imgs/output-onlinegiftools.gif');
+    background-size: 120px;
+    position: absolute;
+    bottom: 26px;
+}
+.chao_img{
+    background-repeat: repeat;
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    bottom: 0;
+    background-size: 30px;
+    background-image: url('./imgs/d1a5d8ba0d1b47605433fed2057474a0.jpg');
+    animation: animacaoChao 0.4s linear infinite;
+    animation-fill-mode: forwards;
+}
+@keyframes animacaoFundo {
+    from{
+        background-position: 0px;
+    }
+    to{
+        background-position: -1000px;
+    }
+}
+@keyframes animacaoMontanha {
+    from{
+        right: -33%;
+    }to{
+        right: 100%;
+    }
+}
+@keyframes animacaoChao {
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: -120px;
+    }
+}
+@keyframes cliquePulo {
+    0%{
+        top: 0px;
+    }
+    50%{
+        top: 50px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+
+@keyframes mudarTexto {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%;
+    }
+
+}
+
+
+@keyframes loadingAnimation {
+    from{
+        opacity: 100%;
+    }to{
+        opacity: 0%;
+    }
+}
+
+
+@keyframes explodir {
+    0%{
+        width: 100px;
+        height: 100px;
+        opacity: 100%;
+    } 
+    20%{
+        width: 150px;
+        height: 150px;
+        opacity: 80%;
+    }
+    40%{
+        width: 200px;
+        height: 200px;
+        opacity: 60%;
+    }
+    60%{
+        width: 250px;
+        height: 250px;
+        opacity: 40%;
+    }
+    80%{
+        width: 300px;
+        height: 300px;
+        opacity: 20%;
+    }
+    100%{
+        width: 350px;
+        height: 350px;
+        opacity: 0%;
+    }
+}
+
+@keyframes girar {
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(360deg);
+    }
+}
+
+
+@keyframes desaparecer {
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%;
+    }
+}
+
+@keyframes pisca {
+    10%{
+        background-color: red;
+    }
+    20%{
+        background-color: rgb(255, 123, 0);
+    }
+    30%{
+        background-color: rgb(255, 217, 0);
+    }
+    40%{
+        background-color: rgb(145, 255, 0)
+    }
+    50%{
+        background-color:rgb(56, 165, 42)
+    }
+    60%{
+        background-color: rgb(0, 255, 213);
+    }
+    70%{
+        background-color:rgb(71, 157, 255);
+    }
+    80%{
+        background-color:rgb(169, 50, 205)
+    }
+    90%{
+        background-color: rgb(128, 46, 139);
+    }
+    100%{
+        background-color:rgb(255, 0, 13)
+    }
+
+}
